@@ -1,0 +1,606 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-image: url('assets/photos/newhero-bg-mobile.webp');
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hero {
+    background-image: url('assets/photos/newhero-bg-tablet.webp');
+  }
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #4F4F4F;
+  background: #FAFAF7;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  background: #FAF8F5;
+  border-bottom: 1px solid #e5d4c0;
+  padding: 1rem 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #2D2D2D;
+}
+
+.logo-sub {
+  font-size: 0.85rem;
+  color: #4F4F4F;
+  letter-spacing: 0.5px;
+}
+
+/* Sticky Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* ensures it stays above all sections */
+  background: rgba(250, 248, 245, 0.97); /* slightly transparent version of your current header bg */
+  backdrop-filter: blur(6px); /* subtle glass effect for modern polish */
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* adds depth once user scrolls */
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #4B3A2F;
+}
+
+.btn {
+  background: #C9A97B;
+  color: #4B3A2F;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #D4B280;
+  color: #4B3A2F;
+}
+
+.btn-quote {
+  background: #5A3D2B;
+  color: #fff;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  background: #B08963;
+  color: white;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background-image: url('assets/photos/newhero-bg-2000x900.webp');
+  background-size: cover;        /* Ensures image covers full area */
+  background-position: center;   /* Keeps image centered */
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Allows normal scroll on mobile */
+  width: 100%;
+  min-height: 70vh;              /* Keeps hero visible even on smaller screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #fff;                   /* Ensure readable text */
+}
+
+/* Adjust layout for small screens */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    background-position: center top; /* Focus upper portion for phones */
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtext {
+    font-size: 0.95rem;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-family: Georgia, serif;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.subtext {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #FFFFFF;
+}
+
+.cta-buttons .btn {
+  margin: 0 0.5rem;
+  background: #C9A97B;
+  color: #4B3A2F;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Services Section */
+.services,
+.why-us,
+.quote,
+.about {
+  background-color: #F9F6F2;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4B3A2F;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.services p {
+  font-size: 1.125rem;
+  color: #5A3D2B;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: #FFFDFB;
+  border: 1px solid #EADBCB;
+  border-radius: 8px;
+  /* Increased box-shadow intensity */
+  box-shadow: 0 6px 24px 4px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+}
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #4B3A2F;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 1.05rem;
+  color: #6B4C3B;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .service-card {
+    width: calc(33% - 2rem);
+  }
+}
+
+/* Why Choose Marotta Section */
+.why-us {
+  background-color: #FAFAF7;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4B3A2F;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.why-us p {
+  font-size: 1.125rem;
+  color: #5A3D2B;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.reason {
+  background: #FFFDFB;
+  border: 1px solid #EADBCB;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+}
+
+.reason h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #4B3A2F;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.reason p {
+  font-size: 1.05rem;
+  color: #6B4C3B;
+  line-height: 1.5;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .reason {
+    width: calc(33% - 2rem);
+  }
+}/* About Section */
+.about {
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.about h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4B3A2F;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.125rem;
+  color: #5A3D2B;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.counter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2D2D2D;
+}
+/* Quote Section */
+.quote {
+  text-align: center;
+}
+
+.quote h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4B3A2F;
+  margin-bottom: 1rem;
+}
+
+.quote p {
+  font-size: 1.125rem;
+  color: #5A3D2B;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.quote-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.quote-form-column {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  /* Increased box-shadow intensity and added border */
+  box-shadow: 0 6px 24px 4px rgba(0, 0, 0, 0.12);
+  border: 1px solid #EADBCB;
+  max-width: 500px;
+  margin-right: 2rem;
+}
+
+.quote-form .form-group input,
+.quote-form .form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.quote-form .btn {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #5a3d2b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.quote-form .btn:hover {
+  background-color: #442e20;
+}
+
+.quote-columns {
+  display: flex;
+  justify-content: center; /* centers both columns together */
+  align-items: flex-start;
+  gap: 3rem; /* consistent spacing */
+  max-width: 1000px; /* limits total width */
+  margin: 2rem auto; /* centers the columns horizontally */
+}
+
+.quote-form-column,
+.quote-info-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.quote-form-column {
+  max-width: 450px;
+}
+
+.quote-info-column {
+  max-width: 450px;
+}
+
+/* Quote Section Two-Column Layout */
+.quote-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-form-column,
+.quote-info-column {
+  flex: 1 1 300px;
+}
+
+.quote-info-column h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #2D2D2D;
+}
+
+.quote-info-column ul {
+  padding-left: 0;
+  margin-top: 0.5rem;
+  list-style-position: inside;
+}
+
+.quote-info-column ul li {
+  margin-bottom: 0.5rem;
+  list-style: disc inside;
+  color: #4F4F4F;
+}
+.quote-info-column p {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 1.5rem;
+  text-align: left;
+}
+/* Why Choose Marotta Section */
+.why-us {
+  background-color: #FAFAF7;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.why-icon-svg {
+  width: 60px;
+  height: 60px;
+  color: #5d3a1a; /* brown shade used in site */
+  margin: 0 auto 0.75rem;
+  display: block;
+}
+
+/* Card Grid Layout */
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.why-card {
+  background: #FFFDFB;
+  border: 1px solid #EADBCB;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.why-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #4B3A2F;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-card p {
+  font-size: 1.05rem;
+  color: #6B4C3B;
+  line-height: 1.5;
+}
+
+/* Responsive layout for larger screens */
+@media (min-width: 768px) {
+  .why-card {
+    width: calc(25% - 2rem);
+  }
+}
+/* Footer Section */
+footer {
+  background-color: #442e20; /* Match the dark button color */
+  color: #ffffff; /* White text */
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}

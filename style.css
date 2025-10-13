@@ -10,17 +10,6 @@ html {
   padding: 0;
 }
 
-@media (max-width: 480px) {
-  .hero {
-    background-image: url('assets/photos/newhero-bg-mobile.webp');
-  }
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-  .hero {
-    background-image: url('assets/photos/newhero-bg-tablet.webp');
-  }
-}
 
 body {
   font-family: system-ui, sans-serif;
@@ -95,6 +84,41 @@ a {
   align-items: center;
   font-size: 0.95rem;
   color: #4B3A2F;
+}
+
+/* Ensure Get Quote button stays visible inside the header nav */
+.nav-links a.btn-quote {
+  color: #fff;              /* override .nav-links a color */
+  background: #5A3D2B;      /* match button background */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.nav-links a.btn-quote:hover {
+  background: #C9A97B; /* match hero button background color */
+  color: #4B3A2F;      /* same text color as hero buttons */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Keep other nav links brown while excluding the button */
+.nav-links a:not(.btn-quote) {
+  color: #4B3A2F;
+}
+
+
+/* Enhance base link for stronger hover feedback */
+.nav-links a:not(.btn-quote) {
+  display: inline-block;           /* enables padding/background on hover */
+  padding: 0.35rem 0.6rem;         /* creates a pill area */
+  border-radius: 8px;              /* rounded hover background */
+  transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease, text-underline-offset 0.15s ease;
+  text-underline-offset: 3px;      /* nicer underline spacing */
+}
+
+.nav-links a:not(.btn-quote):hover {
+  color: #ffffff;                  /* stronger contrast */
+  background-color: #5A3D2B;       /* brand brown fill */
+  text-decoration: none;           /* remove default underline */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* subtle lift */
 }
 
 .btn {
@@ -183,6 +207,16 @@ a {
   margin-bottom: 1rem;
   color: #FFFFFF;
   font-weight: 700;
+}
+
+/* Fix H1 overflow on mobile */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;      /* scale down text size */
+    line-height: 1.2;       /* tighten spacing */
+    word-break: break-word; /* prevent overflow */
+    padding: 0 1rem;        /* add side padding */
+  }
 }
 
 .tagline {
@@ -586,6 +620,38 @@ a {
     width: calc(25% - 2rem);
   }
 }
+
+/* Mobile hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #faf8f5;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
 /* Footer Section */
 footer {
   background-color: #442e20; /* Match the dark button color */

@@ -105,6 +105,7 @@ a {
 }
 
 
+
 /* Enhance base link for stronger hover feedback */
 .nav-links a:not(.btn-quote) {
   display: inline-block;           /* enables padding/background on hover */
@@ -669,4 +670,22 @@ footer a {
 footer a:hover {
   text-decoration: none;
   opacity: 0.9;
+}
+
+/* ================================
+   Mobile Hamburger Menu Styling
+   ================================ */
+.menu-toggle,
+.menu-toggle svg,
+.hamburger-icon,
+.hamburger-icon svg {
+  color: #3A2E2B;   /* brand dark tone */
+  fill: #3A2E2B;    /* for SVG icons */
+}
+
+/* Optional hover/focus states */
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #C9A97B; /* your gold highlight color */
+  fill: #C9A97B;
 }

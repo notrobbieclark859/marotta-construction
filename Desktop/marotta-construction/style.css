@@ -689,3 +689,24 @@ footer a:hover {
   color: #C9A97B; /* your gold highlight color */
   fill: #C9A97B;
 }
+
+/* Center the quote form on mobile */
+@media (max-width: 768px) {
+  .quote-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote-form-column,
+  .quote-info-column {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
+  .quote-form {
+    width: 100%;
+  }
+}

@@ -683,6 +683,26 @@ footer a:hover {
   fill: #3A2E2B;    /* for SVG icons */
 }
 
+/* Force hamburger icon (including pseudo-element or Unicode ☰) to use brand color */
+.menu-toggle {
+  color: #3A2E2B !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* In case it's using ::before or ::after content */
+.menu-toggle::before,
+.menu-toggle::after {
+  color: #3A2E2B !important;
+  fill: #3A2E2B !important;
+}
+
+/* Hover/focus color */
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #C9A97B !important;
+}
+
 /* Optional hover/focus states */
 .menu-toggle:hover,
 .menu-toggle:focus {

@@ -311,6 +311,57 @@
     section {
       background-color: #ffffff !important;
     }
+
+    /* Consistent section header styling */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3A2E2B;
+      margin-bottom: 1rem;
+      border: none;
+    }
+
+    /* Hero section with background image */
+    .hero {
+      background: url('assets/photos/newhero-bg-2000x900.webp') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 8rem 1rem;
+      background-color: #3A2E2B; /* fallback color */
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtext {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #f5f2ee;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 5rem 1rem;
+        background-position: center top;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -348,7 +399,7 @@
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
-      <h2>Our Services</h2>
+      <h2 class="section-title">Our Services</h2>
       <p class="section-subtext">We specialize in bringing your outdoor vision to life with quality craftsmanship and attention to detail.</p>
       <div class="service-cards">
     <div class="service-card">
@@ -397,7 +448,7 @@
   <!-- Process Timeline Section -->
   <section class="process" id="process">
     <div class="container">
-      <h2 style="text-align:center;">Our Process</h2>
+      <h2 class="section-title">Our Process</h2>
       <p style="text-align:center; max-width:700px; margin: 0 auto 1.5rem;">
         We guide you through every step — from first consultation to long-term satisfaction.
       </p>
@@ -508,7 +559,7 @@
   <!-- Get Your Free Quote Section -->
   <section class="quote" id="quote">
     <div class="container">
-      <h2>Get Your Free Quote</h2>
+      <h2 class="section-title">Get Your Free Quote</h2>
       <p>Tell us about your project and we’ll get back to you with a custom estimate.</p>
       <div class="quote-columns">
         <!-- Left Column: Form -->
@@ -639,7 +690,7 @@
   <!-- Service Area Section -->
   <section class="service-area" id="service-area">
     <div class="container">
-      <h2 style="text-align:center;">Service Area</h2>
+      <h2 class="section-title">Service Area</h2>
       <p style="text-align:center; max-width:700px; margin: 0 auto 1rem;">
         Proudly serving Central Kentucky — including Lexington, Georgetown, Nicholasville, Versailles, and surrounding communities.
       </p>

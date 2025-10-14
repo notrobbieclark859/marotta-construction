@@ -9,12 +9,16 @@ html {
   margin: 0;
   padding: 0;
 }
+:root {
+  --bg-a: #F7EEE4; /* warm parchment */
+  --bg-b: #EFE6DC; /* soft stone */
+}
 
 
 body {
   font-family: system-ui, sans-serif;
   color: #4F4F4F;
-  background: #FAFAF7;
+  background: #FFFFFF; /* unified white base */
   line-height: 1.6;
 }
 
@@ -67,9 +71,9 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000; /* ensures it stays above all sections */
-  background: rgba(250, 248, 245, 0.97); /* slightly transparent version of your current header bg */
-  backdrop-filter: blur(6px); /* subtle glass effect for modern polish */
+  z-index: 1000;
+  background: #FAF8F5; /* solid background for clarity */
+  backdrop-filter: blur(6px);
   transition: box-shadow 0.3s ease;
 }
 
@@ -260,7 +264,6 @@ a {
 .why-us,
 .quote,
 .about {
-  background-color: #F9F6F2;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -323,7 +326,6 @@ a {
 
 /* Why Choose Marotta Section */
 .why-us {
-  background-color: #FAFAF7;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -352,7 +354,6 @@ a {
 }
 
 .reason {
-  background: #FFFDFB;
   border: 1px solid #EADBCB;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -384,7 +385,6 @@ a {
 }/* About Section */
 .about {
   text-align: center;
-  background-color: #FFFFFF;
 }
 
 .about h2 {
@@ -399,7 +399,6 @@ a {
 .about-content {
   max-width: 800px;
   margin: 0 auto;
-  background: #FFFFFF;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   padding: 2rem;
@@ -464,7 +463,6 @@ a {
 }
 
 .quote-form-column {
-  background-color: #fff;
   padding: 1.5rem;
   border-radius: 12px;
   /* Increased box-shadow intensity and added border */
@@ -591,7 +589,6 @@ a {
 }
 
 .why-card {
-  background: #FFFDFB;
   border: 1px solid #EADBCB;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -729,4 +726,75 @@ footer a:hover {
   .quote-form {
     width: 100%;
   }
+}
+/* === Section Border & Header Consistency Fix === */
+
+/* Remove any visual "divider" between sections */
+.services, 
+.process, 
+.quote, 
+.service-area {
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+}
+
+/* Match section header styling (font, color, spacing) */
+.process h2,
+.service-area h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4B3A2F;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Align section background colors consistently */
+.process {
+  padding: 4rem 2rem;
+}
+
+.service-area {
+  padding: 4rem 2rem;
+}
+
+/* === FINAL: Alternating Section Backgrounds (Enforced) === */
+
+/* Hero transparent over image, header stays solid for visibility */
+.hero {
+  background-color: transparent !important;
+}
+
+/* Alternating backgrounds with stronger color variation */
+.services {
+  background-color: #F7EEE4 !important; /* warm parchment */
+}
+
+.process {
+  background-color: #EFE6DC !important; /* slightly deeper stone */
+}
+
+.why-us {
+  background-color: #F7EEE4 !important;
+}
+
+.about {
+  background-color: #EFE6DC !important;
+}
+
+.quote {
+  background-color: #F7EEE4 !important;
+}
+
+.service-area {
+  background-color: #EFE6DC !important;
+}
+
+/* Footer stays dark */
+footer {
+  background-color: #442e20 !important;
+  color: #fff;
 }

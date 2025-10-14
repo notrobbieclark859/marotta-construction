@@ -276,6 +276,32 @@
         display: flex;
       }
     }
+    /* Mobile form centering */
+@media (max-width: 768px) {
+  .quote-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quote-form-column,
+  .quote-info-column {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .quote-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .quote-form input,
+  .quote-form textarea,
+  .quote-form button {
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body>

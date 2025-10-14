@@ -242,18 +242,19 @@
       border-top-right-radius: 8px;
       margin-bottom: 1rem;
     }
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #3A2E2B; /* brand brown */
-    }
+ .menu-toggle {
+  -webkit-appearance: none; /* Remove default iOS button styling */
+  appearance: none;
+  background: none;
+  border: none;
+  color: #3A2E2B;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 
-    .menu-toggle:hover,
+.menu-toggle:hover,
 .menu-toggle:focus {
-  color: #C9A97B; /* gold hover color */
+  color: #C9A97B;
 }
     @media (max-width: 768px) {
       .menu-toggle {

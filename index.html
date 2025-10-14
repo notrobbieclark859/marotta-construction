@@ -311,6 +311,57 @@
     section {
       background-color: #ffffff !important;
     }
+
+    /* Consistent section header styling */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3A2E2B;
+      margin-bottom: 1rem;
+      border: none;
+    }
+
+    /* Hero section with background image */
+    .hero {
+      background: url('assets/photos/newhero-bg-2000x900.webp') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 8rem 1rem;
+      background-color: #3A2E2B; /* fallback color */
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtext {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #f5f2ee;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 5rem 1rem;
+        background-position: center top;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -348,7 +399,7 @@
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
-      <h2>Our Services</h2>
+      <h2 class="section-title">Our Services</h2>
       <p class="section-subtext">We specialize in bringing your outdoor vision to life with quality craftsmanship and attention to detail.</p>
       <div class="service-cards">
     <div class="service-card">
@@ -397,7 +448,7 @@
   <!-- Process Timeline Section -->
   <section class="process" id="process">
     <div class="container">
-      <h2 style="text-align:center;">Our Process</h2>
+      <h2 class="section-title">Our Process</h2>
       <p style="text-align:center; max-width:700px; margin: 0 auto 1.5rem;">
         We guide you through every step — from first consultation to long-term satisfaction.
       </p>
@@ -508,7 +559,7 @@
   <!-- Get Your Free Quote Section -->
   <section class="quote" id="quote">
     <div class="container">
-      <h2>Get Your Free Quote</h2>
+      <h2 class="section-title">Get Your Free Quote</h2>
       <p>Tell us about your project and we’ll get back to you with a custom estimate.</p>
       <div class="quote-columns">
         <!-- Left Column: Form -->
@@ -537,9 +588,6 @@
         </div>
         <!-- Right Column: Contact Info -->
         <div class="quote-info-column">
-          <h3>Contact Information</h3>
-          <p>📧 info@marottaconstruction.com</p>
-          <p>📍 Serving Central Kentucky and surrounding areas</p>
           <h3>What to Expect</h3>
           <div class="quote-bullet-wrapper">
             <ul class="quote-bullets">
@@ -636,10 +684,32 @@
   </script>
 </body>
 
+  <!-- Contact Section -->
+  <section class="contact" id="contact" style="background-color:#FAF8F5; padding:4rem 1rem;">
+    <div class="container" style="max-width:1000px; margin:0 auto; text-align:center;">
+      <h2 class="section-title">Contact Us</h2>
+      <p style="max-width:650px; margin:0 auto 2rem; font-size:1rem;">
+        We’d love to hear from you. Whether you’re planning a renovation, addition, or outdoor project, our team is here to help bring your vision to life.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; font-size:1rem; line-height:1.8;">
+        <div>
+          <p>📧 <a href="mailto:info@buildmarotta.com">info@buildmarotta.com</a></p>
+          <p>📞 <a href="tel:8594288278">(859) 428-8278</a></p>
+        </div>
+        <div>
+          <p>📍 620 Raintree Rd</p>
+          <p>Lexington, KY 40502</p>
+≠=
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Service Area Section -->
   <section class="service-area" id="service-area">
     <div class="container">
-      <h2 style="text-align:center;">Service Area</h2>
+      <h2 class="section-title">Service Area</h2>
       <p style="text-align:center; max-width:700px; margin: 0 auto 1rem;">
         Proudly serving Central Kentucky — including Lexington, Georgetown, Nicholasville, Versailles, and surrounding communities.
       </p>
@@ -675,8 +745,9 @@
       </div>
       <div style="flex: 1; min-width: 200px; margin-bottom: 1rem;">
         <h4 style="color: white;">Contact</h4>
-        <p><a href="mailto:info@marottaconstruction.com">info@marottaconstruction.com</a></p>
-        <p>(267) 614-1345</p>
+        <p><a href="mailto:info@buildmarotta.com">info@buildmarotta.com</a></p>
+        <p><a href="tel:8594288278" style="color: white;">(859) 428-8278</a></p>
+        <p>620 Raintree Rd<br>Lexington, KY 40502</p>
       </div>
     </div>
     <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 2rem 0;" />

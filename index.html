@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marotta Construction</title>
+  <title>Marotta Construction | Central KY Home Renovations & Additions</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+
+<!-- Social Sharing Preview -->
+<meta property="og:title" content="Marotta Construction | Central KY Home Renovations & Additions" />
+<meta property="og:description" content="Building homes, not just houses." />
+<meta property="og:image" content="https://buildmarotta.com/assets/photos/newhero-bg-2000x900.webp" />
+<meta property="og:url" content="https://buildmarotta.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Marotta Construction" />
+<meta name="twitter:description" content="Building homes, not just houses." />
+<meta name="twitter:image" content="https://buildmarotta.com/assets/photos/newhero-bg-2000x900.webp" />
+
     .site-header {
       transition: all 0.3s ease;
     }
@@ -111,6 +122,18 @@
       color: #666;
     }
 
+    /* Remove visible line/border between services and process sections */
+    .services {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 3rem; /* keep spacing consistent without visual line */
+    }
+
+    .process {
+      border-top: none;
+      margin-top: 0;
+    }
+
     .process {
       background-color: #fff;
       padding: 4rem 1rem;
@@ -128,14 +151,7 @@
     }
 
     .timeline::before {
-      content: "";
-      position: absolute;
-      top: 40px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background-color: #d6c4b0;
-      z-index: 0;
+      content: none; /* remove horizontal line */
     }
 
     .timeline-step {
@@ -231,17 +247,25 @@
       border-top-right-radius: 8px;
       margin-bottom: 1rem;
     }
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+ .menu-toggle {
+  -webkit-appearance: none; /* Remove default iOS button styling */
+  appearance: none;
+  background: none;
+  border: none;
+  color: #3A2E2B;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #C9A97B;
+}
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
+
       .nav-links {
         display: none;
         flex-direction: column;
@@ -256,6 +280,36 @@
       .nav-links.active {
         display: flex;
       }
+    }
+    /* Mobile form centering */
+@media (max-width: 768px) {
+  .quote-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quote-form-column,
+  .quote-info-column {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .quote-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .quote-form input,
+  .quote-form textarea,
+  .quote-form button {
+    width: 100%;
+  }
+}
+    /* Ensure every section starts with a white background */
+    section {
+      background-color: #ffffff !important;
     }
   </style>
 </head>

@@ -1,0 +1,11 @@
+# Marotta Construction - robots.txt
+# Last updated: 2025-10-15
+
+User-agent: *
+Allow: /
+
+# Disallow admin or system folders (none currently)
+# Disallow: /private/
+# Disallow: /tmp/
+
+Sitemap: https://buildmarotta.com/sitemap.xml

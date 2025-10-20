@@ -590,6 +590,7 @@ a {
 }
 
 .why-card {
+  background-color: #ffffff;
   border: 1px solid #EADBCB;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -612,12 +613,6 @@ a {
   color: #6B4C3B;
   line-height: 1.5;
 }
-
-.why-card {
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* a little more contrast */
-}
-
 
 /* Responsive layout for larger screens */
 @media (min-width: 768px) {

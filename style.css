@@ -463,13 +463,14 @@ a {
 }
 
 .quote-form-column {
+  background-color: #ffffff; /* white form background */
   padding: 1.5rem;
   border-radius: 12px;
-  /* Increased box-shadow intensity and added border */
   box-shadow: 0 6px 24px 4px rgba(0, 0, 0, 0.12);
   border: 1px solid #EADBCB;
   max-width: 500px;
   margin-right: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .quote-form .form-group input,

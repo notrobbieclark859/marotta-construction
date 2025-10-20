@@ -612,6 +612,12 @@ a {
   line-height: 1.5;
 }
 
+.why-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* a little more contrast */
+}
+
+
 /* Responsive layout for larger screens */
 @media (min-width: 768px) {
   .why-card {

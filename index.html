@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marotta Construction | Additions & Renovations in Central KY</title>
-  <meta name="description" content="Marotta Construction is a trusted Central Kentucky contractor specializing in home additions, renovations, and custom builds. We deliver craftsmanship, integrity, and lasting value on every project." />
+  <meta name="description" content="Marotta Construction is a trusted Central Kentucky contractor specializing in home additions, renovations & custom builds. We deliver craftsmanship, integrity, and lasting value on every project." />
   <link rel="stylesheet" href="style.css" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
 
 <!-- Social Sharing Preview -->
@@ -57,12 +59,96 @@
     .btn-quote:hover {
       background-color: #5d3a1a;
     }
-    .service-list {
-      list-style-position: inside;
-      text-align: center;
-      padding-left: 0;
-      font-size: 0.85rem;
+    /* Option A: Textured Neutral Background */
+    .services {
+      background: linear-gradient(180deg, #FAF8F5 0%, #F4EEE6 100%);
+      padding: 5rem 0;
     }
+
+    .service-item {
+      background: #F8F3EC; /* soft warm neutral background */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      padding: 3.5rem 2rem;
+      margin-bottom: 3rem;
+      border: none;
+      /* border-bottom: 1px solid rgba(150, 125, 100, 0.15); */
+    }
+
+    .service-item:nth-child(even) {
+      background: #F4EDE4; /* slightly deeper tone for alternating sections */
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+    }
+
+    .service-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem; /* reduced from 3rem for tighter layout */
+    }
+
+    .service-img {
+      width: 46%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .service-img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .service-text {
+      width: 45%;
+    }
+
+    .service-text h3 {
+      font-size: 1.9rem;
+      color: #3A2E2B;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-text p {
+      font-size: 1.1rem;
+      color: #4F4F4F;
+      line-height: 1.6;
+    }
+
+    .service-list {
+      list-style: disc inside;
+      text-align: left;
+      color: #5a5a5a;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive adjustments */
+  @media (max-width: 768px) {
+  .service-item {
+    padding: 3rem 1rem;
+  }
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* Ensure images appear first on mobile */
+  .service-content.left-image .service-img,
+  .service-content.right-image .service-img {
+    order: 1;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .service-content.left-image .service-text,
+  .service-content.right-image .service-text {
+    order: 2;
+    width: 100%;
+  }
+}
     .cta-buttons .btn:hover,
     .cta-buttons .btn-secondary:hover {
       background-color: #5d3a1a;
@@ -129,11 +215,7 @@
     }
 
     /* Remove visible line/border between services and process sections */
-    .services {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 3rem; /* keep spacing consistent without visual line */
-    }
+    /* .services: section styles replaced above */
 
     .process {
       border-top: none;
@@ -313,10 +395,6 @@
     width: 100%;
   }
 }
-    /* Ensure every section starts with a white background */
-    section {
-      background-color: #ffffff !important;
-    }
 
     /* Consistent section header styling */
     .section-title {
@@ -368,6 +446,7 @@
         font-size: 2.2rem;
       }
     }
+
   </style>
 </head>
 <body>
@@ -375,10 +454,10 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container nav-container">
+    <div class="container nav-container">
       <div class="logo">
-        <span class="logo-main">MAROTTA</span>
-        <span class="logo-sub">Construction</span>
-      </div>
+  <img src="assets/logo-nav.png" alt="Marotta Construction logo" class="nav-logo" />
+</div>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
       <nav class="nav-links" id="nav-links">
         <a href="#services">Services</a>
@@ -391,7 +470,8 @@
   </header>
 
   <!-- Hero Section -->
-<section class="hero">    <div class="container hero-content">
+  <section class="hero">
+    <div class="container hero-content" data-aos="fade">
       <h1>Marotta Construction</h1>
       <p class="tagline">Quality Outdoor and Renovation Projects in Central Kentucky</p>
       <p class="subtext">From custom patios and decks to garage conversions and exterior upgrades, we bring four generations of expertise to every project.</p>
@@ -407,47 +487,56 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtext">We specialize in bringing your outdoor vision to life with quality craftsmanship and attention to detail.</p>
-      <div class="service-cards">
-    <div class="service-card">
-      <img src="assets/photos/hardscaping-services-600x300.webp" alt="Outdoor Construction & Hardscaping" loading="lazy" />
-      <h3 style="text-align: center;">Outdoor Construction &amp; Hardscaping</h3>
-      <div class="service-copy">
-        <p>Custom patios, pavers, gazebos, and fences that enhance your outdoor living space with durable, beautiful craftsmanship.</p>
-        <ul class="service-list">
-          <li>Custom Patios &amp; Decking</li>
-          <li>Paver Installation</li>
-          <li>Gazebos &amp; Pergolas</li>
-          <li>Fencing Solutions</li>
-        </ul>
+      <div class="service-sections">
+        <!-- Outdoor Construction & Hardscaping -->
+        <section class="service-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-content left-image">
+            <img src="assets/photos/hardscaping-services-600x300.webp" alt="Outdoor Construction & Hardscaping" class="service-img" />
+            <div class="service-text" data-aos="fade-left">
+              <h3>Outdoor Construction & Hardscaping</h3>
+              <p>Custom patios, pavers, gazebos, and fences that enhance your outdoor living space with durable, beautiful craftsmanship.</p>
+              <ul class="service-list">
+                <li>Custom Patios & Decking</li>
+                <li>Paver Installation</li>
+                <li>Gazebos & Pergolas</li>
+                <li>Fencing Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Renovations & Additions -->
+        <section class="service-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-content right-image">
+            <div class="service-text" data-aos="fade-right">
+              <h3>Renovations & Additions</h3>
+              <p>Transform your existing spaces with garage conversions, three-season rooms, and complete kitchen and bathroom renovations.</p>
+              <ul class="service-list">
+                <li>Garage Conversions</li>
+                <li>Three-Season Rooms</li>
+                <li>Kitchen Renovations</li>
+                <li>Bathroom Updates</li>
+              </ul>
+            </div>
+            <img src="assets/photos/additions-services-600x300.webp" alt="Renovations and Additions" class="service-img" />
+          </div>
+        </section>
+        <!-- Decks, Porches & Masonry -->
+        <section class="service-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-content left-image">
+            <img src="assets/photos/decks-services-600x300.webp" alt="Decks, Porches & Masonry" class="service-img" />
+            <div class="service-text" data-aos="fade-left">
+              <h3>Decks, Porches & Masonry</h3>
+              <p>Custom decks and beautiful stone and brick features that add character and value to your property.</p>
+              <ul class="service-list">
+                <li>Custom Deck Construction</li>
+                <li>Porch Installation</li>
+                <li>Stone & Brick Features</li>
+                <li>Masonry Work</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-<div class="service-card">
-  <img src="assets/photos/additions-services-600x300.webp" alt="Renovations and Additions" loading="lazy" />
-  <h3 style="text-align: center;">Renovations & Additions</h3>
-      <div class="service-copy">
-        <p>Transform your existing spaces with garage conversions, three-season rooms, and complete kitchen and bathroom renovations.</p>
-        <ul class="service-list">
-          <li>Garage Conversions</li>
-          <li>Three-Season Rooms</li>
-          <li>Kitchen Renovations</li>
-          <li>Bathroom Updates</li>
-        </ul>
-      </div>
-    </div>
-    <div class="service-card">
-      <img src="assets/photos/decks-services-600x300.webp" alt="Decks, Porches & Masonry" loading="lazy" />
-      <h3 style="text-align: center;">Decks, Porches &amp; Masonry</h3>
-     <div class="service-copy">
-        <p>Custom decks and beautiful stone and brick features that add character and value to your property.</p>
-        <ul class="service-list">
-          <li>Custom Deck Construction</li>
-          <li>Porch Installation</li>
-          <li>Stone &amp; Brick Features</li>
-          <li>Masonry Work</li>
-        </ul>
-      </div>
-    </div>
-  </div>
     </div>
   </section>
 
@@ -563,13 +652,13 @@
   </section>
 
   <!-- Get Your Free Quote Section -->
-  <section class="quote" id="quote">
+  <section class="quote" id="quote" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title">Get Your Free Quote</h2>
-      <p>Tell us about your project and we’ll get back to you with a custom estimate.</p>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Get Your Free Quote</h2>
+      <p data-aos="fade-up" data-aos-delay="200">Tell us about your project and we’ll get back to you with a custom estimate.</p>
       <div class="quote-columns">
         <!-- Left Column: Form -->
-        <div class="quote-form-column">
+        <div class="quote-form-column" data-aos="fade-right" data-aos-delay="300">
           <form class="quote-form" action="https://formspree.io/f/mjkaewrk" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
@@ -589,11 +678,11 @@
               <textarea id="message" name="message" rows="4"></textarea>
             </div>
             <p id="form-status" style="margin-top: 1rem; font-size: 0.9rem;"></p>
-            <button type="submit" class="btn">Send Request</button>
+            <button type="submit" class="btn" data-aos="zoom-in" data-aos-delay="600">Send Request</button>
           </form>
         </div>
         <!-- Right Column: Contact Info -->
-        <div class="quote-info-column">
+        <div class="quote-info-column" data-aos="fade-left" data-aos-delay="400">
           <h3>What to Expect</h3>
           <div class="quote-bullet-wrapper">
             <ul class="quote-bullets">
@@ -688,6 +777,16 @@
       });
     });
   </script>
+
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // animation duration in ms
+    easing: 'ease-out-cubic',
+    once: true,      // animate only once per element
+  });
+</script>
 </body>
 
   <!-- Contact Section -->
